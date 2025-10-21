@@ -87,7 +87,7 @@ const NavigationHeader = () => {
               <Link href="/search" aria-label="Search" className="transition-opacity hover:opacity-70">
                 <Search className="h-6 w-6 text-white" />
               </Link>
-              <Link href="/account" aria-label="My account" className="transition-opacity hover:opacity-70">
+              <Link href="/login" aria-label="Login to your account" className="transition-opacity hover:opacity-70">
                 <User className="h-6 w-6 text-white" />
               </Link>
               <Link href="/cart" aria-label="Shopping cart" className="transition-opacity hover:opacity-70">

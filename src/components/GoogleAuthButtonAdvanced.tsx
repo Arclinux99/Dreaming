@@ -1,8 +1,8 @@
 // 🔧 CONTOH LENGKAP DENGAN BERBAGAI REDIRECT RULES
 'use client'
-import { createClient } from '@supabase/ssr'
+import { createClient } from '@supabase/supabase-js'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function GoogleAuthButtonAdvanced() {
   const [isLoading, setIsLoading] = useState(false)
@@ -123,9 +123,18 @@ export default function GoogleAuthButtonAdvanced() {
 
   // 🧪 FUNGSI BONUS: Save redirect untuk protected actions
   const saveRedirectForLater = (targetPath: string) => {
-    localStorage.setItem('redirectAfterLogin', targetPath)
-    console.log('💾 Saved redirect for later:', targetPath)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('redirectAfterLogin', targetPath)
+      console.log('💾 Saved redirect for later:', targetPath)
+    }
   }
+
+  // FIX: Gunakan useEffect untuk client-side only
+  const [currentPath, setCurrentPath] = useState('...')
+  
+  useEffect(() => {
+    setCurrentPath(window.location.pathname)
+  }, [])
 
   return (
     <div className="space-y-4">
@@ -151,7 +160,7 @@ export default function GoogleAuthButtonAdvanced() {
       
       {/* 🧪 Testing UI */}
       <div className="text-xs text-gray-500 space-y-1">
-        <p>Current path: <code className="bg-gray-100 px-1 rounded">{typeof window !== 'undefined' ? window.location.pathname : '...'}</code></p>
+        <p>Current path: <code className="bg-gray-100 px-1 rounded">{currentPath}</code></p>
         <p>Debug: Check console for redirect analysis</p>
       </div>
       

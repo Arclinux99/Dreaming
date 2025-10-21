@@ -1,4 +1,4 @@
-import GoogleAuthButton from '@/components/GoogleAuthButton'
+import GoogleAuthButton from '@/components/GoogleAuthButtonAdvanced'
 import Link from 'next/link'
 
 export default function LoginPage() {

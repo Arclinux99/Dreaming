@@ -26,9 +26,9 @@ export default function GoogleAuthButtonSimple() {
       const currentPath = window.location.pathname
       
       // Simple redirect rule
-      let next = '/dashboard'
-      if (currentPath === '/signup') next = '/onboarding'
-      if (currentPath === '/login') next = '/dashboard'
+      let next = '/'
+      if (currentPath === '/signup') next = '/'
+      if (currentPath === '/login') next = '/'
       
       console.log('📍 Redirect config:')
       console.log('  - Current path:', currentPath)
@@ -39,7 +39,9 @@ export default function GoogleAuthButtonSimple() {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: redirectUrl
+          redirectTo: redirectUrl,
+          flowType: 'pkce',
+          queryParams: { prompt: 'select_account' }
         }
       })
       

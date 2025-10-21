@@ -20,8 +20,8 @@ export default function GoogleAuthButtonAdvanced() {
     
     // RULE 1: Redirect berdasarkan halaman asal
     const pathRules: { [key: string]: string } = {
-      '/login': '/dashboard',
-      '/signup': '/onboarding',
+      '/login': '/',
+      '/signup': '/',
       '/pricing': '/subscribe',
       '/checkout': '/payment',
       '/account': '/profile',
@@ -57,9 +57,9 @@ export default function GoogleAuthButtonAdvanced() {
       }
     }
     
-    // DEFAULT: Ke dashboard
-    console.log('✅ Using default redirect: /dashboard')
-    return '/dashboard'
+    // DEFAULT: Ke beranda/home
+    console.log('✅ Using default redirect: /')
+    return '/'
   }
 
   // 🚀 HANDLE GOOGLE SIGN IN
@@ -101,7 +101,8 @@ export default function GoogleAuthButtonAdvanced() {
           queryParams: {
             access_type: 'offline',
             prompt: 'consent',
-          }
+          },
+          flowType: 'pkce'
         }
       })
       

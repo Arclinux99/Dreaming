@@ -7,11 +7,12 @@ const AboutSection = () => {
       <div className="grid lg:grid-cols-2">
         <div className="relative h-[480px] lg:h-auto min-h-[480px]">
           <Image
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/b844646f-2e66-43d4-a49f-75c25755ec0b-theeffectsguy-store/assets/images/DSC01846.2-10.jpg?"
+            src="https://res.cloudinary.com/dwh2xecbx/image/upload/v1761011230/khabeb_ir3e0a.png"
             alt="Creator Alexander standing in front of a red car"
             fill
             sizes="(max-width: 1023px) 100vw, 50vw"
             className="object-cover"
+            priority
           />
         </div>
 

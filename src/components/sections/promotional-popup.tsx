@@ -87,12 +87,12 @@ export default function PromotionalPopup() {
         {/* Right Side: Image */}
         <div className="hidden md:block relative bg-secondary">
           <Image
-            src="https://theeffectsguy.store/cdn/shop/files/DSC01846.2.jpg?v=1749408218"
+            src="https://res.cloudinary.com/dwh2xecbx/image/upload/v1761009637/73198c5531a4fa6c4aa49de2fce873a1_t355uq.jpg"
             alt="Promotional image of Alexandru Jugrastan"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="opacity-50"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center opacity-50"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
           <div className="relative h-full flex flex-col justify-between p-8 text-white">

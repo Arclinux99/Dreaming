@@ -1,5 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Spline from '@splinetool/react-spline/next';
+
+export default function Home() {
+  return (
+    <main>
+      <Spline
+        scene="https://prod.spline.design/KJSSjo0l7-jEGoW0/scene.splinecode" 
+      />
+    </main>
+  );
+}
 
 const AboutSection = () => {
   return (
